@@ -147,6 +147,7 @@ void dac_init(){
   SPI1CON = 0; // turn off and reset SPI
   SPI1BUF; // Clear rx buffer by reading it
   SPI1BRG = 0x1;// trying max DAC baud rate of 20 MHz end up with 12 MHz [SPI1BRG = (48000000/(2*desired))-1]
+  // change SPI1BRG to slow down (to about 0x1000) baudrate and manually debug from oscilloscope
   SPI1STATbits.SPIROV = 0;  // clear the overflow bit
   SPI1CONbits.CKE = 1;      // data changes when clock goes from hi to lo (since CKP is 0)
   SPI1CONbits.MSTEN = 1;    // master operation
