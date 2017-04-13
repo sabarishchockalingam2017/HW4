@@ -110,11 +110,6 @@ int main(){
     
     while(1){
          LATAINV=0b10000;
-//         setVoltage(0,0);
-//         setVoltage(1,0);
-//         delay();
-//         setVoltage(0,255);
-//         setVoltage(1,255);
          delay();         
     }
    return 0; 
@@ -134,7 +129,7 @@ unsigned char spi_io(unsigned char o){
     while(!SPI1STATbits.SPIRBF) { // wait to receive the byte
         ;
     }
-    return SPI1BUF;
+    return SPI1BUF; //need this since buffer has to be read or chips won't continue reading and writing
 }
 
 void dac_init(){
