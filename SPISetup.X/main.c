@@ -135,7 +135,7 @@ unsigned char spi_io(unsigned char o){
 void dac_init(){
     
   TRISBbits.TRISB7 = 0;
-  CS = 1;
+  CS = 1; // making chip select high, which is default value when idle
   SDI1R = 0b0000; //Setting pin A0 to SS1, although not used
   RPB8R = 0b0011; //Setting pin B8 to SDO1
     
